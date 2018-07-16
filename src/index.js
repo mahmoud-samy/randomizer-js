@@ -5,8 +5,8 @@ const seedrandom = require('seedrandom');
 const randomizer = (seed) => {
     const rng = seedrandom(seed);
     const next = (a, b) => {
-        a = a || 100
-        b = b || 0
+        a = a === undefined ? 100 : a
+        b = b === undefined ? 0 : b
         let min = Math.min(a, b);
         let max = Math.max(a, b);
         return Math.floor((rng() * (max - min)) + min)
@@ -18,17 +18,22 @@ const randomizer = (seed) => {
     const randomWord = () => Array.from({ length: next(2, 10) }, randomLetter).join("")
     const randomSentence = () => Array.from({ length: next(3, 8) }, randomWord).join(" ")
     const randomParagraph = () => Array.from({ length: next(30, 80) }, randomSentence).join(". ")
-    const randomAge = () => new Date(2018 - next(18, 70), next(1, 12), next(1, 28))
-    const randomArrayElement = (ar=[]) => ar[next(0, ar.length)]
+    const randomDoB = () => new Date(new Date().getFullYear() - next(20, 70), next(1, 12), next(1, 28))
+    const randomDoD = (dob = randomDoB()) => new Date(next(dob.getFullYear() + 18, new Date().getFullYear() - 1), next(1,12), next(1,28))
+    const randomArrayElement = (ar = []) => 
+    ar[next(0, ar.length)]
     const randomFemaleName = () => randomArrayElement(femaleNameAr)
     const randomMaleName = () => randomArrayElement(maleNameAr)
     const randomBoolean = () => next() % 2 === 0 ? true : false;
     const randomPerson = () => {
         let isMale = randomBoolean();
+        let dob = randomDoB();
         return {
             isMale,
             firstName: isMale ? randomMaleName() : randomFemaleName(),
-            lastName: randomMaleName()
+            lastName: randomMaleName(),
+            dob,
+            dod: randomDoD(dob)
         };
     }
 
@@ -38,7 +43,8 @@ const randomizer = (seed) => {
         randomWord,
         randomSentence,
         randomParagraph,
-        randomAge,
+        randomDoB,
+        randomDoD,
         randomArrayElement,
         randomFemaleName,
         randomMaleName,
