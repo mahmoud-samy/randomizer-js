@@ -31,16 +31,16 @@ console.log(rand.randomDoD(dob))        // Always 1969-07-25T22:00:00.000Z
 console.log(rand.randomDate(20, 3))     // Always 2002-08-11T22:00:00.000Z
 var ar = [410,120,360,470,850]
 console.log(rand.randomArrayElement(ar))// Always 120
-console.log(rand.randomFemaleName())    // Always Clarice
-console.log(rand.randomMaleName())      // Always Ellis
-console.log(rand.randomBoolean())       // Always true
+console.log(rand.randomFemaleName())    // Always Emerita
+console.log(rand.randomMaleName())      // Always Gail
+console.log(rand.randomBoolean())       // Always false
 console.log(rand.randomPerson())
 // Always
 // {
 //     isMale: true,
-//     firstName: 'Bennie',
-//     lastName: 'Valentine',
-//     dob: 1966-03-10T22:00:00.000Z,
-//     dod: 1993-03-12T22:00:00.000Z
+//     firstName: 'Wesley',
+//     lastName: 'Bradley',
+//     dob: 1988-11-07T22:00:00.000Z,
+//     dod: undefined
 // }
 ```
