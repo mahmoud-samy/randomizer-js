@@ -9,12 +9,14 @@ console.log(rand.randomParagraph())     // Always osij flosnqe paa. eesrdr ehwgq
 var dob = rand.randomDoB()
 console.log(dob)                        // Always 1949-06-04T22:00:00.000Z
 console.log(rand.randomDoD(dob))        // Always 1969-07-25T22:00:00.000Z
+console.log(rand.randomDate(20, 3))     // Always 2002-08-11T22:00:00.000Z
 var ar = [410,120,360,470,850]
 console.log(rand.randomArrayElement(ar))// Always 120
 console.log(rand.randomFemaleName())    // Always Clarice
 console.log(rand.randomMaleName())      // Always Ellis
 console.log(rand.randomBoolean())       // Always true
 console.log(rand.randomPerson())
+
 // Always 
 // {
 //     isMale: true,

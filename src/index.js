@@ -19,9 +19,14 @@ const randomizer = (seed) => {
     const randomSentence = () => Array.from({ length: next(3, 8) }, randomWord).join(" ")
     const randomParagraph = () => Array.from({ length: next(30, 80) }, randomSentence).join(". ")
     const randomDoB = () => new Date(new Date().getFullYear() - next(20, 70), next(1, 12), next(1, 28))
-    const randomDoD = (dob = randomDoB()) => new Date(next(dob.getFullYear() + 18, new Date().getFullYear() - 1), next(1,12), next(1,28))
-    const randomArrayElement = (ar = []) => 
-    ar[next(0, ar.length)]
+    const randomDoD = (dob = randomDoB()) => new Date(next(dob.getFullYear() + 18, new Date().getFullYear() - 1), next(1, 12), next(1, 28))
+    const randomDate = (maxAge = 60, minAge = 10) => {
+        const currentYear = new Date().getFullYear();
+        const randYear = next(currentYear-maxAge, currentYear-minAge);
+        console.log(randYear)
+        return new Date(randYear, next(1, 12), next(1, 28))
+    }
+    const randomArrayElement = (ar = []) => ar[next(0, ar.length)]
     const randomFemaleName = () => randomArrayElement(femaleNameAr)
     const randomMaleName = () => randomArrayElement(maleNameAr)
     const randomBoolean = () => next() % 2 === 0 ? true : false;
@@ -45,6 +50,7 @@ const randomizer = (seed) => {
         randomParagraph,
         randomDoB,
         randomDoD,
+        randomDate,
         randomArrayElement,
         randomFemaleName,
         randomMaleName,
