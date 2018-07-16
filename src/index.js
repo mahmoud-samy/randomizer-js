@@ -33,7 +33,7 @@ const randomizer = (seed) => {
             firstName: isMale ? randomMaleName() : randomFemaleName(),
             lastName: randomMaleName(),
             dob,
-            dod: randomDoD(dob)
+            dod: next() > 90 ? randomDoD(dob) : undefined
         };
     }
 
