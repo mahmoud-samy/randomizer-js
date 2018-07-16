@@ -3,6 +3,13 @@
   "version": "1.0.1",
   "description": "",
   "main": "src/index.js",
+  "keywords": [
+    "random",
+    "randomize",
+    "randomized",
+    "rand",
+    "mock"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/mahmoud-samy/randomizer-js/issues"
   },
-  "homepage": "https://github.com/mahmoud-samy/randomizer-js#readme"
+  "homepage": "https://github.com/mahmoud-samy/randomizer-js#readme",
+  "dependencies": {
+    "seedrandom": "^2.4.3"
+  }
 }
