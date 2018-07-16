@@ -1,6 +1,8 @@
 # randomizer-js
 
-seeded random generator for Javascript
+[![Build Status](https://travis-ci.org/mahmoud-samy/randomizer-js.svg?branch=master)](https://travis-ci.org/mahmoud-samy/randomizer-js)
+
+Seeded random generator for Javascript
 
 ## Node.js usage
 
